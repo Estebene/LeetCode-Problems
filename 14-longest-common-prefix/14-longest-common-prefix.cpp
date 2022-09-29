@@ -1,20 +1,17 @@
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
-        int i = 0;
-        string prefix = "";
-        while (true) {
-            if (size(strs[0]) == i) {
-                break;
+        int min = size(strs[0]);
+        for (string str: strs) {
+            if (size(str) < min) {
+                min = size(str);
             }
+        }
+        string prefix = "";
+        for (int i = 0; i < min; i ++) {
             char c = strs[0][i];
-            cout << c;
             bool isCommon = true;
             for (int j = 1; j < size(strs); j++) {
-                if (size(strs[j]) == i) {
-                    isCommon = false;
-                    break;
-                }
                 if (strs[j][i] != c) {
                     isCommon = false;
                     break;
@@ -25,7 +22,6 @@ public:
             } else {
                 break;
             }
-            i ++;
         }
         return prefix;
     }
