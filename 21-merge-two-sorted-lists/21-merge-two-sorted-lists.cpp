@@ -15,11 +15,6 @@ public:
         ListNode *c1 = head;
         c1->next = list1;
         while (c1->next && list2) {
-            cout << list2->val;
-            cout << "\n";
-            cout << "if";
-            cout << c1->next->val;
-            cout << "\n";
             if (list2->val <= c1->next->val) {
                 ListNode *t1 = list2;
                 list2 = list2->next;
