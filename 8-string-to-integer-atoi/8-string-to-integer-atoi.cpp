@@ -16,25 +16,17 @@ public:
         }
         while (index < size(s)) {
             if (isdigit(s[index])) {
-                if (isNeg && total > INT_MAX / 10) {
-                    return (INT_MAX  * -1) - 1;
-                }
-                if (total > INT_MAX / 10) {
-                    return (INT_MAX);
+                int num = s[index] - '0';
+                if ((total) < (-(INT_MAX - num) / 10)) {
+                    return isNeg ? (INT_MAX  * -1) - 1 : (INT_MAX); 
                 }
                 total *= 10;
-                if (isNeg && total > INT_MAX - (s[index] - '0')) {
-                    return (INT_MAX  * -1) - 1;
-                }
-                if (total > INT_MAX - (s[index] - '0')) {
-                    return (INT_MAX);
-                }
-                total += s[index] - '0';
+                total -= num;
                 index++;
             } else {
                 break;
             }
         }
-        return total * (isNeg ? -1 : 1);
+        return total * (isNeg ? 1 : -1);
     }
 };
