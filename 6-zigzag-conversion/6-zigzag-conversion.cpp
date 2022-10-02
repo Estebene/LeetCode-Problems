@@ -15,10 +15,6 @@ public:
                 if (num > mod / 2) {
                     num = mod - num;
                 }
-                cout << index % mod;
-                cout << " ";
-                cout << num;
-                cout << "\n";
                 ss[num].push_back(c);
             }
             index ++;
