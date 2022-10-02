@@ -13,14 +13,10 @@ public:
                 }
                 left++;
             }
-            cout << left;
-            cout << right;
             if (left != right) {
                 ss.insert(s[right]);
             }
             int sl = (right - left) + 1;
-            cout << sl;
-            cout << "\n";
             if (sl > max_length) {
                 max_length = sl;
             }
