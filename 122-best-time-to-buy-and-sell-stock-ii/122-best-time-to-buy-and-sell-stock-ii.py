@@ -6,10 +6,8 @@ class Solution(object):
         """
         total, last = 0, prices[0]
         for price in prices[1:]:
-            if price <= last:
-                last = price
-            else: 
+            if price > last:
                 total += (price-last)
-                last = price
+            last = price
         return total
         
