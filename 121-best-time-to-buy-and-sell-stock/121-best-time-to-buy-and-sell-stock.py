@@ -4,11 +4,13 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        minimum = prices[0];
-        gains = 0;
-        for i in range(1, len(prices)):
+        minimum = prices[0]
+        gains = 0
+        i = 1
+        while (i < len(prices)):
             minimum = min(minimum, prices[i])
             gains = max(prices[i]-minimum, gains)
+            i+=1
         return gains
             
             
