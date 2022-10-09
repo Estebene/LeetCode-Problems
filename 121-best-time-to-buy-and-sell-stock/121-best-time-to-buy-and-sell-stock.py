@@ -1,8 +1,16 @@
-class Solution:
-    def maxProfit(self, nums):
-        ans, dp = 0, 0
-        for i in range(0, len(nums)-1):
-            q = nums[i+1] - nums[i]
-            dp = max(dp + q, q)
-            ans = max(ans, dp)
-        return ans
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        minimum = prices[0];
+        gains = 0;
+        for price in prices:
+            minimum = min(minimum, price)
+            gains = max(price-minimum, gains)
+        return gains
+            
+            
+            
+        
