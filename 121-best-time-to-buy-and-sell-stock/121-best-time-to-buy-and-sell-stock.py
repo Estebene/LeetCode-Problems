@@ -6,9 +6,9 @@ class Solution(object):
         """
         minimum = prices[0];
         gains = 0;
-        for price in prices:
-            minimum = min(minimum, price)
-            gains = max(price-minimum, gains)
+        for i in range(1, len(prices)):
+            minimum = min(minimum, prices[i])
+            gains = max(prices[i]-minimum, gains)
         return gains
             
             
