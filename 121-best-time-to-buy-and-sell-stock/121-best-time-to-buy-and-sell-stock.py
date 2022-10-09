@@ -7,10 +7,8 @@ class Solution(object):
         minimum = prices[0];
         gains = 0;
         for price in prices[1:]:
-            if price < minimum:
-                minimum = price
-            elif (price - minimum) > gains:
-                gains = price - minimum
+            minimum = min(minimum, price)
+            gains = max(price-minimum, gains)
         return gains
             
             
